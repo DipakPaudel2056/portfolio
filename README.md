@@ -6,6 +6,11 @@ I have researched and kept learning for the past few years and with over just 6 
 
 # Day one
 
+<details>
+<summary>
+Day one
+</summary>
+## Day one
 first i create a simple nextjs app with the js and the vanilla css but day one would be to create a simple functioning app with all the pages and the routing in place. in day 2 i will style them and make them mobile responsive.
 
 For now i have just used the nextjs built in <Link> component to do the routing in between the links. as the project grows big i need to optimise it further
@@ -27,3 +32,5 @@ but you must satisfy this dependecy
     "react-dom": "19.2.0",
     "next": "16.0.1"
 ```
+
+</details>
