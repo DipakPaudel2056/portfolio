@@ -1,6 +1,9 @@
 this is my project to showcase to get hired in 2026.
 I have researched and kept learning for the past few years and with over just 6 months of industry experience and lots of just theoritical knowledge i am jotting everything down here
 
+this is my project to showcase to get hired in 2026.
+I have researched and kept learning for the past few years and with over just 6 months of industry experience and lots of just theoritical knowledge i am jotting everything down here
+
 # Day one
 
 first i create a simple nextjs app with the js and the vanilla css but day one would be to create a simple functioning app with all the pages and the routing in place. in day 2 i will style them and make them mobile responsive.
