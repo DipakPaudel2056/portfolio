@@ -1,36 +1,10 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+this is my project to showcase to get hired in 2026. 
+I have researched and kept learning for the past few years and with over just 6 months of industry experience and lots of just theoritical knowledge i am jotting everything down here 
+# Day one
+first i create a simple nextjs app with the js and the vanilla css but day one would be to create a simple functioning app with all the pages and the routing in place. in day 2 i will style them and make them mobile responsive.
 
-## Getting Started
+For now i have just used the nextjs built in <Link> component to do the routing in between the links. as the project grows big i need to optimise it further 
 
-First, run the development server:
+so for today i learnt new hook of the nextjs routing useLinkStatus and i have implemented it in the projects route. now time to wrap this up for today. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+now i have to make this project public in github
