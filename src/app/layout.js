@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className="navbar">
+        <div className="navbar">
           <h2>
             <Link href="/">logo</Link>
           </h2>
@@ -38,7 +38,7 @@ export default function RootLayout({ children }) {
           <h2>
             <Link href="/contact">contact</Link>
           </h2>
-        </nav>
+        </div>
         {children}
       </body>
     </html>

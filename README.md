@@ -34,3 +34,17 @@ but you must satisfy this dependecy
 ```
 
 </details>
+
+# Day two
+
+<details>
+<summary>
+Day one
+</summary>
+so as i have mentioned yesterday! I will be working in designing the basic pages style for the home page, contact page, blog page and the project page.
+I will be using the basic jsx components and the vanilla css to create a design that is mobile responsive. 
+
+Not much of a work today, loaded a sample video file and made the homepage with the video running and i made it responsive as well.
+
+Tomorrow I will be working in the blogs page and the contact page.
+</details>

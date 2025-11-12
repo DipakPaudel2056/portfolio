@@ -5,8 +5,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #0a0a0a;
+    --background: #ededed;
   }
 }
 
@@ -23,7 +23,51 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.header {
+  position: relative;
+}
+.header__video {
+  width: 100%;
+  height: 620px;
+  object-fit: fill;
+}
+.header__content {
+  font-size: 2em;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 80%;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.704);
+  color: white;
+  padding: 0.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+  text-align: center;
+}
+.header__btn {
+  cursor: pointer;
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+  color: #0a0a0a;
+  border: 2px solid white;
+  margin-top: 20px;
+}
+.header__btn:hover {
+  color: white;
+  border: 2px solid;
+  background-color: #0a0a0a;
+  border-color: white;
+}
+@media screen and (max-width: 600px) {
+  .header__content {
+    font-size: 0.8em;
+  }
+}
 * {
   box-sizing: border-box;
   padding: 0;
@@ -40,10 +84,18 @@ a {
     color-scheme: dark;
   }
 }
-.navbar{
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
   display: flex;
-  justify-content: space-between;
-  padding: 1em;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--background);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 .navbar h2 {
   cursor: pointer;
@@ -58,7 +110,7 @@ a {
   opacity: 0;
   visibility: hidden; /* reserve space without showing the hint */
 }
- 
+
 .link-hint.is-pending {
   /* Animation 1: fade in after 100ms and keep final opacity */
   /* Animation 2: subtle pulsing while pending */
@@ -71,7 +123,9 @@ a {
   animation-iteration-count: 1, infinite;
   animation-fill-mode: forwards, none;
 }
- 
+.homepage {
+  padding-top:4rem ;
+}
 @keyframes fadeIn {
   to {
     opacity: 0.35;
@@ -81,4 +135,20 @@ a {
   50% {
     opacity: 0.15;
   }
+}
+.second__div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+}
+.second__header {
+  color: #909090;
+}
+.black {
+  color: #000000;
+  font-size: 3em;
+  padding: 1em;
+  font-weight: bold;
 }
