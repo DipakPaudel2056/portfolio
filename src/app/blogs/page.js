@@ -17,7 +17,7 @@ const page = () => {
             id="search__blog"
             placeholder="find blogs"
           />
-          <button>Find Now</button>
+          <button className="find__now__btn">Find Now</button>
         </span>
       </div>
       <div className="blog__main">
