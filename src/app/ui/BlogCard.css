@@ -1,0 +1,38 @@
+.blog__card {
+    max-width: 300px;
+    border-radius: .2em;
+    border: 1px solid #292929;
+    padding: .2em;
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    
+}
+.blog__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    object-fit: cover;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+}
+.blog__tag {
+    background-color: gray;
+    font-size: .8em;
+    object-fit: contain;
+    width: fit-content;
+    padding: .2em;
+    color: white;
+    border-radius: .2em;
+    margin-top: 70%;
+}
+.blog__title {
+    color: white;
+    font-weight: 300;
+}
+.blog__description {
+    font-size: .5em;
+    color: white;
+}
