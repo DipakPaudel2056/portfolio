@@ -35,7 +35,7 @@ but you must satisfy this dependecy
 
 <details>
 <summary>
-Day one
+Day two
 </summary>
 so as i have mentioned yesterday! I will be working in designing the basic pages style for the home page, contact page, blog page and the project page.
 I will be using the basic jsx components and the vanilla css to create a design that is mobile responsive.
@@ -52,4 +52,15 @@ I am expecting to do the front end and the backend of the blog page and the cont
 The pages will be simple and mobile responsive.
 Blog page will have a simple card with the video running that will explain about the project or the blog itself.
 Contact page will have my simple contact information with the social icons and the contact form to send me an email. 
+</details>
+<details>
+<summary>Day four</summary>
+Today i will be working in creating a backend to CRUD blogs and if possible i will also create a contact form and hook that with some backend process. 
+This is my first time working with the postgre sql. Why did i choose it? well i want to learn it. I have worked with  SQL in the past and i want to keep the data in my site in relational database. I get to polish my SQL skills while working in this project.
+
+Connecting to the postgre sql was hassel. I initiated the project in vercel just for the sake of learning and i was trying to connect to the storage provided by vercel prisma+postgres. However, i wasnot able to connect to the database server. After few minutes of research i found that my vpn was blocking the network once i turned off the vpn i was able to connect.
+
+After the connection, i created a prisma client with recommended setting in /lib/prisma used that client to perform Create and Read operation from the blog page.
+
+This is it for today.
 </details>

@@ -1,7 +1,10 @@
 import React from "react";
+import prisma from "../lib/prisma";
 import "./style.css";
 import BlogCard from "../ui/BlogCard";
-const page = () => {
+const page = async () => {
+  const all_Blogs = await prisma.blog.findMany();
+  console.log(all_Blogs)
   return (
     <div className="main">
       <div className="blog__header">
@@ -24,13 +27,13 @@ const page = () => {
         <div className="blogs__all">
           <h2>My blogs are remarkable.</h2>
           <div className="blogs__section">
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
-            <BlogCard />
+            {all_Blogs.map((blog) => (
+              <BlogCard
+                key={blog.id}
+                title={blog.title}
+                description={blog.description}
+              />
+            ))}
           </div>
         </div>
         <div className="blog__categorical">
