@@ -64,3 +64,16 @@ After the connection, i created a prisma client with recommended setting in /lib
 
 This is it for today.
 </details>
+<details>
+<summary>Day 5</summary>
+Today i started by creating a model for the message.
+I want to create a simple contact me form and when the user send the message the message will be stored in the database with the help of prisma.
+The key objectives of doing it is to perform CREATE operation with the help of prisma.
+let's build the contact me page now!
+
+So the basic of the frontend is done and setting up the new table took all my time and effort  however i made it happen. Steps involved? 
+1. write your new model
+2. mograte that new model 
+3. generate prisma client
+4. use it in the application code.
+</details>
