@@ -84,5 +84,9 @@ keeping track of visitor
 I want to keep track of how many times the site has been visited and display that number in the home page of this site.
 A simple CREATE and READ operation.
 so for that,  
-repeat the flow of day-1 also delete the
+repeat the flow of day-1.
+
+Now the update part is complete but now the update is not in real time. user manually have to refresh the page. let's work on that. For the shake of able to deploy in vercel, i am using Ably.
+1. create an account and get the API_KEY, store in .env file
+2. 
 </details>

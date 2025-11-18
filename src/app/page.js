@@ -1,5 +1,5 @@
 import prisma from "./lib/prisma";
-
+import RealtimeCounter from "../app/ui/RealtimeCounter"
 export default function Home() {
   async function counter() {
     "use server";
@@ -40,6 +40,7 @@ export default function Home() {
         </h1>
         <p className="black"> WEBSITE & MOBILE APPS</p>
         <p>total site visit: {counter()}</p>
+        <RealtimeCounter />
       </div>
     </div>
   );
