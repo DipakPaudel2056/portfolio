@@ -19,3 +19,11 @@ CREATE TABLE "Message" (
 
     CONSTRAINT "Message_pkey" PRIMARY KEY ("id")
 );
+
+-- CreateTable
+CREATE TABLE "Sitevisit" (
+    "id" SERIAL NOT NULL,
+    "count" INTEGER NOT NULL,
+
+    CONSTRAINT "Sitevisit_pkey" PRIMARY KEY ("id")
+);

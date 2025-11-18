@@ -72,8 +72,17 @@ The key objectives of doing it is to perform CREATE operation with the help of p
 let's build the contact me page now!
 
 So the basic of the frontend is done and setting up the new table took all my time and effort  however i made it happen. Steps involved? 
-1. write your new model
-2. mograte that new model 
+1. write your new model 
+2. migrate that new model 
 3. generate prisma client
 4. use it in the application code.
+</details>
+<details>
+<summary>Day 6</summary>
+untill day 5 i have created a basic contact form and the user can contact me. But how do i get to know that the client have actually sent me a message? to be able to read this message, i must create an admin application. which we will build together in coming days. But for today let's focus on creating a feature, which will have a basic counter. 
+keeping track of visitor
+I want to keep track of how many times the site has been visited and display that number in the home page of this site.
+A simple CREATE and READ operation.
+so for that,  
+repeat the flow of day-1 also delete the
 </details>

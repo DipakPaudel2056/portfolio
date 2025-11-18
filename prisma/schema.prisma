@@ -26,3 +26,7 @@ model Message {
   phone String
   message String
 }
+model Sitevisit {
+  id Int @id @default(autoincrement())
+  count Int
+}
