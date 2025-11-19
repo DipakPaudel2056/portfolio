@@ -1,23 +1,11 @@
+import RealtimeCounter from "../app/ui/RealtimeCounter";
 import prisma from "./lib/prisma";
-import RealtimeCounter from "../app/ui/RealtimeCounter"
 export default function Home() {
-  async function counter() {
-    "use server";
-    let total_visit = 0;
-    await prisma.sitevisit.update({
-      where: {
-        id: 1,
-      },
-      data: {
-        count: { increment: 1 },
-      },
+  async function getTotalVisit() {
+    const visit = await prisma.sitevisit.findUnique({
+      where: { id: 1 },
     });
-    total_visit = await prisma.sitevisit.findUnique({
-      where: {
-        id: 1,
-      },
-    });
-    return total_visit.count;
+    return visit.count;
   }
   return (
     <div className="homepage">
@@ -39,8 +27,7 @@ export default function Home() {
           MY ONLY AMBITION IS BUILDING BUSINESSES
         </h1>
         <p className="black"> WEBSITE & MOBILE APPS</p>
-        <p>total site visit: {counter()}</p>
-        <RealtimeCounter />
+        <RealtimeCounter totalvisit={getTotalVisit()} />
       </div>
     </div>
   );

@@ -90,3 +90,8 @@ Now the update part is complete but now the update is not in real time. user man
 1. create an account and get the API_KEY, store in .env file
 2. 
 </details>
+<details>
+<summary>Day 7</summary>
+I updated the database on every render of the component and the ably subscribe and the publisher are added and on every render of the component, we update the database and the message with the new count is published to all the subscriber and displayed accordingly.
+
+</details>
