@@ -3,7 +3,7 @@ import Ably from "ably";
 import { NextResponse } from "next/server";
 
 const ably = new Ably.Rest({
-  key: process.env.ABLY_APIKEY,
+  key: process.env.NEXT_PUBLIC_ABLY_APIKEY,
 });
 export async function POST() {
   const updated = await prisma.sitevisit.update({
