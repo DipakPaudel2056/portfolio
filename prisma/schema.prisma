@@ -27,3 +27,9 @@ model Sitevisit {
   id    Int @id @default(autoincrement())
   count Int
 }
+
+model User {
+  id    Int @id @default(autoincrement())
+  email     String   @unique
+  password  String?
+}

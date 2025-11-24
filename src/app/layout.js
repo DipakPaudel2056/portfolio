@@ -38,6 +38,9 @@ export default function RootLayout({ children }) {
           <h2>
             <Link href="/contact">contact</Link>
           </h2>
+          <h2>
+            <Link href="/login">Login</Link>
+          </h2>
         </div>
         {children}
       </body>

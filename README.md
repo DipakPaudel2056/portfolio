@@ -93,5 +93,15 @@ Now the update part is complete but now the update is not in real time. user man
 <details>
 <summary>Day 7</summary>
 I updated the database on every render of the component and the ably subscribe and the publisher are added and on every render of the component, we update the database and the message with the new count is published to all the subscriber and displayed accordingly.
-
+But...
+</details>
+<details>
+<summary>Day 8</summary>
+There was this issue that i couldnot fix for past 2 days. Ofcourse i didnot fully commited to solve the problem. 
+The Ably: Auth.requestToken() was bugging me for a while in the production deployment. later after number of research and `chatgpt` i simply changed the env file with api key with the NEXT_PUBLIC_ prefix and it fixed all the issue.
+Let's create a blog writting tool where only i can login and write a blog.
+1. create a login button ✅
+2. create a login form 
+3. implement authentication
+4. if authenticated, go to admin page
 </details>
