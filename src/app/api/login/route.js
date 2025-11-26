@@ -1,7 +1,11 @@
+import { getServerSession } from "next-auth";
 import prisma from "../../lib/prisma";
 import bcrypt from "bcrypt";
+import { NextResponse } from "next/server";
+import { error } from "console";
+import { redirect } from "next/navigation";
 // here i need to write a server side logic to handle the login
-// get 
+// get
 export async function POST(req) {
   const body = await req.json();
   const { email, password } = body;
@@ -9,8 +13,10 @@ export async function POST(req) {
   const user = await prisma.user.findUnique({
     where: { email },
   });
-//   check if the password hash matches
-const isMatch = await bcrypt.compare(password,user.password,)
+  //   check if the password hash matches
+  // check if the the session is created
+  const isMatch = await bcrypt.compare(password, user.password);
+  const session = await getServerSession()
   if (isMatch) {
     return new Response(
       JSON.stringify({

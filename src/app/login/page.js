@@ -1,4 +1,8 @@
 "use client";
+
+import { redirect } from "next/navigation";
+
+
 const page = () => {
   // handle submit
   async function handleSubmit(event) {
@@ -11,7 +15,9 @@ const page = () => {
     });
     const result = await response.json()
     // handle the routing logic here
-    console.log(result)
+    if (result.message === "successfully logged in"){
+      redirect('/dashboard')
+    }
     return result
   }
  
