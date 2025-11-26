@@ -11,6 +11,7 @@ const page = () => {
     });
     const result = await response.json()
     // handle the routing logic here
+    console.log(result)
     return result
   }
  
@@ -18,8 +19,8 @@ const page = () => {
     <div className="main">
       welcome to login page
       <form onSubmit={handleSubmit}>
-        <input type="text" name="email" placeholder="email" />
-        <input type="text" name="password" placeholder="password" />
+        <input type="email" name="email" placeholder="email" />
+        <input type="password" name="password" placeholder="password" />
         <button type="submit">login</button>
       </form>
     </div>
