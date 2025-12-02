@@ -2,10 +2,13 @@
 
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const Page = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const params = useSearchParams();
+  const error = params.get("error");
   // handle submit
   async function handleSubmit(event) {
     event.preventDefault();
