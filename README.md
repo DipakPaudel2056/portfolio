@@ -105,3 +105,11 @@ Let's create a blog writting tool where only i can login and write a blog.
 3. implement authentication
 4. if authenticated, go to admin page
 </details>
+<details>
+<summary>Day 9</summary>
+Day began by implementing the authenticattion and successfully redirecting the user to the dashboard and protecting the dashboard page. I implemented NextAuth with Credentials Provider to authenticate the users. 
+✅clientloginpage -> authorize() -> JWT based session -> dashboard
+❌clientloginpage -> incorrect -> Nextauth(return null) -> loginpage with error
+
+📝Note: I have to change the value of NEXTAUTH_URL in production environment
+</details>
