@@ -4,7 +4,6 @@ import "./style.css";
 import BlogCard from "../ui/BlogCard";
 const page = async () => {
   const all_Blogs = await prisma.blog.findMany();
-  console.log(all_Blogs)
   return (
     <div className="main">
       <div className="blog__header">
@@ -30,8 +29,10 @@ const page = async () => {
             {all_Blogs.map((blog) => (
               <BlogCard
                 key={blog.id}
+                tag={blog.tag}
                 title={blog.title}
                 description={blog.description}
+                link={blog.id}
               />
             ))}
           </div>

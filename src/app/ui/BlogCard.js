@@ -1,10 +1,12 @@
+"use client";
 import Image from "next/image";
-import React from "react";
 import "./BlogCard.css";
+import { redirect } from "next/navigation";
 
-const BlogCard = ({ id, title, tag, description }) => {
+const BlogCard = ({ title, tag, description, link }) => {
+
   return (
-    <div className="blog__card">
+    <div className="blog__card" onClick={() => redirect(`/blogs/${link}`)}>
       <div>
         <Image
           className="blog__image"
@@ -14,7 +16,7 @@ const BlogCard = ({ id, title, tag, description }) => {
           height={400}
         />
       </div>
-      <div className="blog__tag">{tag?tag:`Health & Nutrition`}</div>
+      <div className="blog__tag">{tag ? tag : `Health & Nutrition`}</div>
       <div className="blog__title">
         {title
           ? title

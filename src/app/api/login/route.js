@@ -1,9 +1,6 @@
 import { getServerSession } from "next-auth";
 import prisma from "../../lib/prisma";
 import bcrypt from "bcrypt";
-import { NextResponse } from "next/server";
-import { error } from "console";
-import { redirect } from "next/navigation";
 // here i need to write a server side logic to handle the login
 // get
 export async function POST(req) {

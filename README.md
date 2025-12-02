@@ -112,4 +112,8 @@ Day began by implementing the authenticattion and successfully redirecting the u
 ❌clientloginpage -> incorrect -> Nextauth(return null) -> loginpage with error
 
 📝Note: I have to change the value of NEXTAUTH_URL in production environment
+<!-- let's create a create blogs, create projects, and view messages in the dashboard page -->
+since we already have message schema, let's see all the message.
+I have implemented that, next challenge was to protect all the routes inside the dashboard. For that i used proxy.js which is  a middleware for nextjs application. I can make use of withAuth middleware from nextjs and use that to create a proxy function that always run for the paths that are defined in the config for now they are dashboard page and the page with /api .
+🔏 certain bits and pieces of the application
 </details>
