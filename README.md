@@ -117,3 +117,7 @@ since we already have message schema, let's see all the message.
 I have implemented that, next challenge was to protect all the routes inside the dashboard. For that i used proxy.js which is  a middleware for nextjs application. I can make use of withAuth middleware from nextjs and use that to create a proxy function that always run for the paths that are defined in the config for now they are dashboard page and the page with /api .
 🔏 certain bits and pieces of the application
 </details>
+<summary>Day 10</summary>
+Day 10 challenge will be to create a pagination and attaching caching to the server.
+And also designing the contact me form, login form and home page.
+</details>
