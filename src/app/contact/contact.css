@@ -1,0 +1,148 @@
+/* === GLOBAL RESETS === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Roboto", sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+/* === CONTACT HEADER === */
+.contact__header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.contact__header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.contact__header p {
+  font-size: 1rem;
+  margin: 4px 0;
+  color: #444;
+}
+
+.social__icons {
+  margin-top: 1.5rem;
+  font-weight: 600;
+  color:var(--primary);
+  cursor: pointer;
+}
+
+/* === CONTACT BODY === */
+.contact__body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* Text section */
+.contact__body__desc {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.contact__body__desc h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.contact__body__desc p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* === FORM STYLING === */
+.contact__body__form {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.contact__body__form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact__body__form input {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  transition: border 0.25s ease;
+}
+
+.contact__body__form input:focus {
+  border-color: #0073ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0,115,255,0.15);
+}
+
+/* Submit button */
+.contact__body__form button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: #0073ff;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.contact__body__form button:hover {
+  background: #005dd2;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .contact__body {
+    grid-template-columns: 1fr;
+  }
+
+  .contact__header h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 2rem 1rem;
+  }
+
+  .contact__header {
+    padding: 1.5rem;
+  }
+
+  .contact__body__desc, 
+  .contact__body__form {
+    padding: 1.5rem;
+  }
+}

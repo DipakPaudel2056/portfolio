@@ -1,0 +1,77 @@
+.main {
+  max-width: 400px;
+  margin: 6rem auto;
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.main h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.main p {
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+/* === ERROR MESSAGE === */
+.error {
+  color: #ff4d4f;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+/* === FORM STYLING === */
+.main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.main input {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  transition: border 0.25s ease;
+}
+
+.main input:focus {
+  border-color: #0073ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 115, 255, 0.15);
+}
+
+/* === SUBMIT BUTTON === */
+.main button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: #0073ff;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.main button:hover {
+  background: #005dd2;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 500px) {
+  .main {
+    margin: 3rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .main h1 {
+    font-size: 1.8rem;
+  }
+}

@@ -4,7 +4,7 @@ import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
-
+import './login.css'
 const Page = () => {
   const Loginform = () => {
     "use client";

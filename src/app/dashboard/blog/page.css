@@ -1,0 +1,64 @@
+.main h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+/* === FORM STYLING === */
+.main form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.main input,
+.main textarea {
+  padding: 0.9rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #dcdcdc;
+  font-size: 1rem;
+  transition: border 0.25s ease;
+  width: 100%;
+  resize: vertical;
+}
+
+.main input:focus,
+.main textarea:focus {
+  border-color: #0073ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 115, 255, 0.15);
+}
+
+/* === TEXTAREA SPECIFIC === */
+.main textarea {
+  min-height: 120px;
+}
+
+/* === SUBMIT BUTTON === */
+.main button {
+  padding: 0.9rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background: #0073ff;
+  cursor: pointer;
+  transition: background 0.25s;
+}
+
+.main button:hover {
+  background: #005dd2;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 600px) {
+  .main {
+    margin: 3rem 1rem;
+    padding: 1.5rem;
+  }
+
+  .main h1 {
+    font-size: 1.8rem;
+  }
+}

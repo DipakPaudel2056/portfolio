@@ -25,10 +25,8 @@ await client.connect()
   let all_Blogs;
   const cachedData = await client.get("blogs");
   if (cachedData) {
-    console.log("serving from cache");
     all_Blogs = JSON.parse(cachedData);
   } else {
-    console.log("waiting database response");
     all_Blogs = await prisma.blog.findMany();
     await client.set("blogs", JSON.stringify(all_Blogs));
   }

@@ -1,3 +1,75 @@
 .message__card{
     border: 1px solid red;
 }
+/* === DASHBOARD HEADER === */
+.main h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* === CREATE POST BUTTON === */
+.main button {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  background: #0073ff;
+  cursor: pointer;
+  transition: background 0.25s;
+  margin-bottom: 2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main button:hover {
+  background: #005dd2;
+}
+
+/* === MESSAGE CARDS === */
+.message__card {
+  background: #f5f7fa;
+  border-radius: 10px;
+  padding: 1.2rem 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.message__card p {
+  font-size: 0.95rem;
+  color: #333;
+  word-wrap: break-word;
+}
+
+/* === NOT AUTHORIZED MESSAGE === */
+.main:empty::before {
+  content: "Not authorized!";
+  display: block;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #ff4d4f;
+  font-weight: 600;
+  padding: 2rem 0;
+}
+
+/* === RESPONSIVE DESIGN === */
+@media (max-width: 900px) {
+  .main {
+    padding: 1.5rem;
+  }
+
+  .main h1 {
+    font-size: 1.8rem;
+  }
+
+  .message__card {
+    grid-template-columns: 1fr;
+  }
+}

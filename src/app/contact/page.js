@@ -1,9 +1,16 @@
 import React from "react";
 import prisma from "../lib/prisma";
-
+import "./contact.css";
+import {
+  FaFacebook,
+  FaInstagram,
+  FaInstagramSquare,
+  FaLinkedin,
+  FaLinkedinIn,
+} from "react-icons/fa";
 const page = () => {
   async function createMessage(formData) {
-    "use server"
+    "use server";
     const first_name = formData.get("first_name");
     const last_name = formData.get("last_name");
     const phone = formData.get("phone");
@@ -27,14 +34,18 @@ const page = () => {
           <h1>GET IN TOUCH</h1>
           <p>Call: 0452450087</p>
           <p>Email: paudelsantosh508@gmail.com</p>
-          <p>or fill out the form below and we will get back to you ASAP! </p>
+          <p>or fill out the form below and I will get back to you ASAP! </p>
           <br />
           <p>Perth, WA</p>
-          <div className="social__icons">insta, facebook</div>
+          <div className="social__icons">
+            <FaFacebook /> 
+            <FaInstagramSquare />
+            <FaLinkedin />
+          </div>
         </div>
         <div className="contact__body">
           <div className="contact__body__desc">
-            <h3>I CAN &apos; T WAIT TO HEAR FROM YOU!</h3>
+            <h3>I CAN&apos;T WAIT TO HEAR FROM YOU!</h3>
             <p>
               Since last 3 years i have spent all my time and effort learning
               concepts of web development and building scalable software

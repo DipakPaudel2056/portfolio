@@ -133,5 +133,6 @@ I started by asking chatgpt to create 10 different blogs and the titles accordin
 ✅I created pagination after reading the documentation from the prisma website and now i am heading to create a redis website to implement the caching
 ✅Installed redis in the docker and accessed it in port 6379
 ✅Implemented redis get and set from the nextjs app, the idea of pagination will be added in the message section in admin dashboard again, but blogs i would just cover it as pagination however it is just serving from redis at the moment.
-✅st
+✅served the data to and from cloud redis hosted in aws-southeast-2
+
 </details>
