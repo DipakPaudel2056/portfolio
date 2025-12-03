@@ -1,20 +1,39 @@
-import React from "react";
 export const dynamic = "force-dynamic";
 import prisma from "../lib/prisma";
 import "./style.css";
 import BlogCard from "../ui/BlogCard";
-import Pagination from "../ui/Pagination"
+import Pagination from "../ui/Pagination";
+import Redis from "ioredis";
+import { createClient } from "redis";
+
 const PAGE_SIZE = 5;
 const page = async ({ searchParams }) => {
+  // let's implement cloud redis server
+const client = createClient({
+    username:process.env.REDIS_USERNAME ,
+    password:process.env.REDIS_PASSWORD ,
+    socket: {
+        host: process.env.REDIS_HOST,
+        port: 10947
+    }
+});
+client.on('error',err=>console.log('Redis client error',err))
+await client.connect()
   let { page } = await searchParams;
   page = Number(page) || 0;
-  const all_Blogs = await prisma.blog.findMany({
-    take: PAGE_SIZE,
-    skip: page < 1 ? 0 :(page + 1) * PAGE_SIZE ,
-    orderBy: {
-      id: "asc",
-    },
-  });
+  // try to get the data from the cache
+  let all_Blogs;
+  const cachedData = await client.get("blogs");
+  if (cachedData) {
+    console.log("serving from cache");
+    all_Blogs = JSON.parse(cachedData);
+  } else {
+    console.log("waiting database response");
+    all_Blogs = await prisma.blog.findMany();
+    await client.set("blogs", JSON.stringify(all_Blogs));
+  }
+  let displayingBlogs = all_Blogs.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+
   const totalBlogs = await prisma.blog.count();
   const totalPages = Math.ceil(totalBlogs / PAGE_SIZE);
   return (
@@ -39,7 +58,7 @@ const page = async ({ searchParams }) => {
         <div className="blogs__all">
           <h2>My blogs are remarkable.</h2>
           <div className="blogs__section">
-            {all_Blogs.map((blog) => (
+            {displayingBlogs.map((blog) => (
               <BlogCard
                 key={blog.id}
                 tag={blog.tag}

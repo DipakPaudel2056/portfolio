@@ -63,6 +63,7 @@ Connecting to the postgre sql was hassel. I initiated the project in vercel just
 After the connection, i created a prisma client with recommended setting in /lib/prisma used that client to perform Create and Read operation from the blog page.
 
 This is it for today.
+
 </details>
 <details>
 <summary>Day 5</summary>
@@ -71,9 +72,10 @@ I want to create a simple contact me form and when the user send the message the
 The key objectives of doing it is to perform CREATE operation with the help of prisma.
 let's build the contact me page now!
 
-So the basic of the frontend is done and setting up the new table took all my time and effort  however i made it happen. Steps involved? 
-1. write your new model 
-2. migrate that new model 
+So the basic of the frontend is done and setting up the new table took all my time and effort however i made it happen. Steps involved?
+
+1. write your new model
+2. migrate that new model
 3. generate prisma client
 4. use it in the application code.
 </details>
@@ -87,23 +89,23 @@ so for that,
 repeat the flow of day-1.
 
 Now the update part is complete but now the update is not in real time. user manually have to refresh the page. let's work on that. For the shake of able to deploy in vercel, i am using Ably.
+
 1. create an account and get the API_KEY, store in .env file
-2. 
-</details>
-<details>
-<summary>Day 7</summary>
-I updated the database on every render of the component and the ably subscribe and the publisher are added and on every render of the component, we update the database and the message with the new count is published to all the subscriber and displayed accordingly.
-But...
-</details>
-<details>
-<summary>Day 8</summary>
-There was this issue that i couldnot fix for past 2 days. Ofcourse i didnot fully commited to solve the problem. 
-The Ably: Auth.requestToken() was bugging me for a while in the production deployment. later after number of research and `chatgpt` i simply changed the env file with api key with the NEXT_PUBLIC_ prefix and it fixed all the issue.
-Let's create a blog writting tool where only i can login and write a blog.
-1. create a login button ✅
-2. create a login form 
-3. implement authentication
-4. if authenticated, go to admin page
+2. </details>
+   <details>
+   <summary>Day 7</summary>
+   I updated the database on every render of the component and the ably subscribe and the publisher are added and on every render of the component, we update the database and the message with the new count is published to all the subscriber and displayed accordingly.
+   But...
+   </details>
+   <details>
+   <summary>Day 8</summary>
+   There was this issue that i couldnot fix for past 2 days. Ofcourse i didnot fully commited to solve the problem. 
+   The Ably: Auth.requestToken() was bugging me for a while in the production deployment. later after number of research and `chatgpt` i simply changed the env file with api key with the NEXT_PUBLIC_ prefix and it fixed all the issue.
+   Let's create a blog writting tool where only i can login and write a blog.
+3. create a login button ✅
+4. create a login form
+5. implement authentication
+6. if authenticated, go to admin page
 </details>
 <details>
 <summary>Day 9</summary>
@@ -112,10 +114,13 @@ Day began by implementing the authenticattion and successfully redirecting the u
 ❌clientloginpage -> incorrect -> Nextauth(return null) -> loginpage with error
 
 📝Note: I have to change the value of NEXTAUTH_URL in production environment
+
 <!-- let's create a create blogs, create projects, and view messages in the dashboard page -->
+
 since we already have message schema, let's see all the message.
-I have implemented that, next challenge was to protect all the routes inside the dashboard. For that i used proxy.js which is  a middleware for nextjs application. I can make use of withAuth middleware from nextjs and use that to create a proxy function that always run for the paths that are defined in the config for now they are dashboard page and the page with /api .
+I have implemented that, next challenge was to protect all the routes inside the dashboard. For that i used proxy.js which is a middleware for nextjs application. I can make use of withAuth middleware from nextjs and use that to create a proxy function that always run for the paths that are defined in the config for now they are dashboard page and the page with /api .
 🔏 certain bits and pieces of the application
+
 </details>
 <details>
 <summary>Day 10</summary>
@@ -126,5 +131,7 @@ And also designing the contact me form, login form and home page.
 <summary>Day 11</summary>
 I started by asking chatgpt to create 10 different blogs and the titles accordingly and uploaded them to the website. now i need to create a pagination.
 ✅I created pagination after reading the documentation from the prisma website and now i am heading to create a redis website to implement the caching
-
+✅Installed redis in the docker and accessed it in port 6379
+✅Implemented redis get and set from the nextjs app, the idea of pagination will be added in the message section in admin dashboard again, but blogs i would just cover it as pagination however it is just serving from redis at the moment.
+✅st
 </details>
