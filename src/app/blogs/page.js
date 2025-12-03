@@ -3,8 +3,20 @@ export const dynamic = "force-dynamic";
 import prisma from "../lib/prisma";
 import "./style.css";
 import BlogCard from "../ui/BlogCard";
-const page = async () => {
-  const all_Blogs = await prisma.blog.findMany();
+import Pagination from "../ui/Pagination"
+const PAGE_SIZE = 5;
+const page = async ({ searchParams }) => {
+  let { page } = await searchParams;
+  page = Number(page) || 0;
+  const all_Blogs = await prisma.blog.findMany({
+    take: PAGE_SIZE,
+    skip: page < 1 ? 0 :(page + 1) * PAGE_SIZE ,
+    orderBy: {
+      id: "asc",
+    },
+  });
+  const totalBlogs = await prisma.blog.count();
+  const totalPages = Math.ceil(totalBlogs / PAGE_SIZE);
   return (
     <div className="main">
       <div className="blog__header">
@@ -37,6 +49,7 @@ const page = async () => {
               />
             ))}
           </div>
+          <Pagination currentPage={page} totalPages={totalPages} />
         </div>
         <div className="blog__categorical">
           <h2>Featured.</h2>
