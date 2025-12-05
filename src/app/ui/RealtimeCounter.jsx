@@ -29,7 +29,7 @@ const LiveUpdate = ({ totalvisit }) => {
       setCurrentVisit(message.data.count);
     }
   });
-  return <span>This site is visited by {currentVisit} people and it updates in real time.</span>;
+  return <span>This site is visited by {currentVisit} new users and it updates in real time.</span>;
 };
 const RealtimeCounter = ({ totalvisit }) => {
   useEffect(() => {

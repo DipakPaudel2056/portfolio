@@ -133,6 +133,13 @@ I started by asking chatgpt to create 10 different blogs and the titles accordin
 ✅I created pagination after reading the documentation from the prisma website and now i am heading to create a redis website to implement the caching
 ✅Installed redis in the docker and accessed it in port 6379
 ✅Implemented redis get and set from the nextjs app, the idea of pagination will be added in the message section in admin dashboard again, but blogs i would just cover it as pagination however it is just serving from redis at the moment.
-✅served the data to and from cloud redis hosted in aws-southeast-2
-
+✅served the data to and from cloud redis hosted in aws-southeast-2 from redislabs
+</details>
+<details>
+<summary>Day 12</summary>
+Today the challenge will be to host a video running in the background to aws s3 and deploy that in production. For now the video is not professional.
+✅created public accessible bucket
+✅Unchecked Block all Public Access check box
+✅Updated bucket policy to be able to GetObject within this AWS Resource
+✅Updated CORS policy to be able to make it accessible from every origin
 </details>
