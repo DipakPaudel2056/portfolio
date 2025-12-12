@@ -1,10 +1,9 @@
 "use client";
-import { SessionProvider, signOut } from "next-auth/react";
-import React from "react";
+import { signOut } from "next-auth/react";
 
 const Signout = () => {
   return (
-    <button onClick={() => signOut({ callbackUrl: "/login" })}>Logout</button>
+    <button onClick={() => signOut({ callbackUrl: "/" })}>Logout</button>
   );
 };
 

@@ -16,5 +16,5 @@ export default withAuth(
 
 // Specify which paths are protected
 export const config = {
-  matcher: ["/dashboard/:path*", "/api/:path*"], 
+  matcher: ["/dashboard/:path*","/api/blogs"], 
 };

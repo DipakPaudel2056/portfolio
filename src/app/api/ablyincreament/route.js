@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 const ably = new Ably.Rest({
   key: process.env.NEXT_PUBLIC_ABLY_APIKEY,
 });
-export async function POST() {
+export async function GET() {
   const updated = await prisma.sitevisit.update({
     where: { id: 1 },
     data: { count: { increment: 1 } },

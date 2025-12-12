@@ -3,7 +3,6 @@ import prisma from "../lib/prisma";
 import "./style.css";
 import BlogCard from "../ui/BlogCard";
 import Pagination from "../ui/Pagination";
-import Redis from "ioredis";
 import { createClient } from "redis";
 
 const PAGE_SIZE = 5;
@@ -15,6 +14,7 @@ const client = createClient({
     socket: {
         host: process.env.REDIS_HOST,
         port: 10947
+        
     }
 });
 client.on('error',err=>console.log('Redis client error',err))
@@ -26,9 +26,10 @@ await client.connect()
   const cachedData = await client.get("blogs");
   if (cachedData) {
     all_Blogs = JSON.parse(cachedData);
+    console.log('serving from cache')
   } else {
     all_Blogs = await prisma.blog.findMany();
-    await client.set("blogs", JSON.stringify(all_Blogs));
+    await client.set("blogs", JSON.stringify(all_Blogs),{EX: 300});
   }
   let displayingBlogs = all_Blogs.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 

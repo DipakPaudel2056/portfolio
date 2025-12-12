@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import prisma from "../../lib/prisma";
+// delete the redis cached blogs on creating new blogs
 
 export async function POST(req) {
   // get the form fields
@@ -14,6 +15,8 @@ export async function POST(req) {
   const newBlog = await prisma.blog.create({
     data: rawFormData,
   });
+  // delete the redis cache
+
   newBlog.id && redirect("/dashboard/blog");
   return new Response(
     JSON.stringify({ message: "created new blog", newBlog }),
@@ -23,3 +26,4 @@ export async function POST(req) {
     }
   );
 }
+

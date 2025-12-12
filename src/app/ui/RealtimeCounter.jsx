@@ -33,7 +33,7 @@ const LiveUpdate = ({ totalvisit }) => {
 };
 const RealtimeCounter = ({ totalvisit }) => {
   useEffect(() => {
-    fetch("./api/ablyincreament", { method: "POST" });
+    fetch("/api/ablyincreament", { method: "GET" });
   }, []);
   return (
     <AblyProvider client={client}>
