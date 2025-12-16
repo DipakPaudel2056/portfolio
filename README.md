@@ -143,3 +143,13 @@ Today the challenge will be to host a video running in the background to aws s3 
 ✅Updated bucket policy to be able to GetObject within this AWS Resource
 ✅Updated CORS policy to be able to make it accessible from every origin
 </details>
+<summary>Day 13</summary>
+For todays episode i will be performing UPDATE operation in my blogs and also have to add some small details including the blog pictureurl, 
+date created, 
+date updated, 
+read-count(blog-page visited).
+✅create a client side and server side logic for updating a blog
+❌let's start with creating new model for the blogs in prisma.
+❌migrate that new model
+❌image input type in admin side, we will handle the image upload to s3 later.
+</details>

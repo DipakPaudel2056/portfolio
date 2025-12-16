@@ -7,6 +7,7 @@ import prisma from "../lib/prisma";
 import Link from "next/link";
 import Signout from "../../app/ui/Signout";
 import DeleteBlog from "../../app/ui/DeleteBlog";
+import UpdateBlog from "../../app/ui/UpdateBlog";
 const Page = async () => {
   const session = await getServerSession();
   if (!session) {
@@ -37,6 +38,7 @@ const Page = async () => {
         <div className="message__card" key={blog.id}>
           <p>{blog.title}</p>
           <DeleteBlog id={blog.id} />
+          <UpdateBlog id={blog.id} />
         </div>
       ))}
       <Signout />
