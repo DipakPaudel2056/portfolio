@@ -1,7 +1,6 @@
-import { redirect } from "next/navigation";
+import { redirect } from "next/dist/server/api-utils";
 import prisma from "../../lib/prisma";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 const s3Client = new S3Client({
   region: process.env.AWS_REGION,
   credentials: {
@@ -12,30 +11,17 @@ const s3Client = new S3Client({
 export async function POST(req) {
   // get the form fields
   const formData = await req.formData();
-  // handle s3 image upload here
   const image = formData.get("image");
-  const command = new PutObjectCommand({
-    Bucket: process.env.PORTFOLIO_BUCKET_NAME,
-    Key: image.name,
-    ContentType: image.type,
-  });
-  const signedUrl = await getSignedUrl(s3Client, command, { expiresIn: 60 });
-  try {
-    await fetch(signedUrl, {
-      method: "PUT",
-      body: image,
-      headers: { "Content-Type": image.type },
-    });
-  } catch (error) {
-    return new Response(
-      JSON.stringify({ message: "Problem uploading a blog image" }),
-      {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-  }
-
+  const buffer = Buffer.from(await image.arrayBuffer());
+  // handle s3 image upload here
+  await s3Client.send(
+    new PutObjectCommand({
+      Bucket: process.env.PORTFOLIO_BUCKET_NAME,
+      Key: image.name,
+      Body: buffer,
+      ContentType: image.type,
+    })
+  );
   const rawFormData = {
     tag: formData.get("tag")?.toString() || "",
     title: formData.get("title")?.toString() || "",
@@ -46,6 +32,7 @@ export async function POST(req) {
   const newBlog = await prisma.blog.create({
     data: rawFormData,
   });
+
   return new Response(
     JSON.stringify({ message: "created new blog", newBlog }),
     {
