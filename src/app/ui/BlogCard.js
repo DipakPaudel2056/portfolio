@@ -3,14 +3,14 @@ import Image from "next/image";
 import "./BlogCard.css";
 import { redirect } from "next/navigation";
 
-const BlogCard = ({ title, tag, description, link }) => {
+const BlogCard = ({ title, tag, description, link, imageurl }) => {
 
   return (
     <div className="blog__card" onClick={() => redirect(`/blogs/${link}`)}>
       <div>
         <Image
           className="blog__image"
-          src="/blogimage.jpg"
+          src= {imageurl || "/blogimage.jpg"}
           alt="thumbnail picture of the blog"
           width={400}
           height={400}

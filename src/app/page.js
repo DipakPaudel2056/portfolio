@@ -5,7 +5,7 @@ export default function Home() {
     const visit = await prisma.sitevisit.findUnique({
       where: { id: 1 },
     });
-    return visit.count;
+    return  visit.count;
   }
   return (
     <div className="homepage">

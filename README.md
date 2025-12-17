@@ -149,7 +149,14 @@ date created,
 date updated, 
 read-count(blog-page visited).
 ✅create a client side and server side logic for updating a blog
-❌let's start with creating new model for the blogs in prisma.
-❌migrate that new model
-❌image input type in admin side, we will handle the image upload to s3 later.
+✅let's start with creating new model for the blogs in prisma.
+✅migrate that new model
+✅image input type in admin side, we will handle the image upload to s3 later.
+</details>
+<summary>Day 14</summary>
+Today we will do these things:
+✅upload image to s3 bucket
+✅get the imageurl and update the database
+✅render that image in all blogs articles
+before we run into the production i need to add new AWS secrets in the environment variable in vercel
 </details>

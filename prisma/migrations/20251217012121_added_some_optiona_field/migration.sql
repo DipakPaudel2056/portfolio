@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Blog" ALTER COLUMN "imageurl" DROP NOT NULL,
+ALTER COLUMN "readcount" SET DEFAULT 0;
