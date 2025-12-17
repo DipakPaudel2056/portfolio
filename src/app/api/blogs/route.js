@@ -40,13 +40,12 @@ export async function POST(req) {
     tag: formData.get("tag")?.toString() || "",
     title: formData.get("title")?.toString() || "",
     description: formData.get("description")?.toString() || "",
-    imageurl:`https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${image.name}`
+    imageurl: `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${image.name}`,
   };
   // get prisma to post this
   const newBlog = await prisma.blog.create({
     data: rawFormData,
   });
-  newBlog.id && redirect("/dashboard/blog");
   return new Response(
     JSON.stringify({ message: "created new blog", newBlog }),
     {
