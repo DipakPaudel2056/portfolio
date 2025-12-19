@@ -47,7 +47,7 @@ export async function POST(req) {
 
     return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error) {
-    console.error("BLOG API ERROR:", err);
+    console.error("BLOG API ERROR:", error);
 
     return new Response(
       JSON.stringify({
