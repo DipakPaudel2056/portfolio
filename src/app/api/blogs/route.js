@@ -51,8 +51,8 @@ export async function POST(req) {
 
     return new Response(
       JSON.stringify({
-        error: err.message,
-        stack: err.stack,
+        error: error.message,
+        stack: error.stack,
       }),
       { status: 500 }
     );
