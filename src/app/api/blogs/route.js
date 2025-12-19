@@ -1,8 +1,8 @@
 export const runtime = "nodejs";
 
-import { redirect } from "next/navigation";
 import prisma from "../../lib/prisma";
 import { PutObjectCommand, S3Client } from "@aws-sdk/client-s3";
+import crypto from "crypto";
 
 const s3Client = new S3Client({
   region: process.env.AWS_REGION,
@@ -20,17 +20,19 @@ export async function POST(req) {
 
   if (image && image.size > 0) {
     const buffer = Buffer.from(await image.arrayBuffer());
+    const ext = image.name.split(".").pop();
+    const key = `${crypto.randomUUID()}.${ext}`;
 
     await s3Client.send(
       new PutObjectCommand({
         Bucket: process.env.PORTFOLIO_BUCKET_NAME,
-        Key: image.name,
+        Key: key,
         Body: buffer,
         ContentType: image.type,
       })
     );
 
-    imageurl = `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${image.name}`;
+    imageurl = `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
   }
 
   await prisma.blog.create({
@@ -41,5 +43,9 @@ export async function POST(req) {
       imageurl,
     },
   });
-  redirect("/blogs")
+
+  return new Response(null, {
+    status: 303,
+    headers: { Location: "/blogs" },
+  });
 }

@@ -16,6 +16,7 @@
     "@prisma/extension-accelerate": "^2.0.2",
     "ably": "^2.14.0",
     "bcrypt": "^6.0.0",
+    "crypto": "^1.0.1",
     "ioredis": "^5.8.2",
     "next": "16.0.7",
     "next-auth": "^4.24.13",
