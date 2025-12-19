@@ -44,8 +44,9 @@ export async function POST(req) {
     },
   });
 
-  return new Response(null, {
-    status: 303,
-    headers: { Location: "/blogs" },
-  });
+  return new Response(
+  JSON.stringify({ success: true }),
+  { status: 200 }
+);
+
 }
