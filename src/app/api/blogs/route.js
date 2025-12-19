@@ -33,7 +33,7 @@ export async function POST(req) {
     imageurl = `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${image.name}`;
   }
 
-  const newBlog = await prisma.blog.create({
+  await prisma.blog.create({
     data: {
       tag: formData.get("tag")?.toString() || "",
       title: formData.get("title")?.toString() || "",
@@ -42,9 +42,4 @@ export async function POST(req) {
     },
   });
   redirect("/blogs")
-
-  return new Response(JSON.stringify(newBlog), {
-    status: 200,
-    headers: { "Content-Type": "application/json" },
-  });
 }
