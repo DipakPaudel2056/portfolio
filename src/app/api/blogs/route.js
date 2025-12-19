@@ -13,40 +13,48 @@ const s3Client = new S3Client({
 });
 
 export async function POST(req) {
-  const formData = await req.formData();
-  const image = formData.get("image");
+  try {
+    const formData = await req.formData();
+    const image = formData.get("image");
 
-  let imageurl = null;
+    let imageurl = null;
 
-  if (image && image.size > 0) {
-    const buffer = Buffer.from(await image.arrayBuffer());
-    const ext = image.name.split(".").pop();
-    const key = `${crypto.randomUUID()}.${ext}`;
+    if (image && image.size > 0) {
+      const buffer = Buffer.from(await image.arrayBuffer());
+      const ext = image.name.split(".").pop();
+      const key = `${crypto.randomUUID()}.${ext}`;
 
-    await s3Client.send(
-      new PutObjectCommand({
-        Bucket: process.env.PORTFOLIO_BUCKET_NAME,
-        Key: key,
-        Body: buffer,
-        ContentType: image.type,
-      })
+      await s3Client.send(
+        new PutObjectCommand({
+          Bucket: process.env.PORTFOLIO_BUCKET_NAME,
+          Key: key,
+          Body: buffer,
+          ContentType: image.type,
+        })
+      );
+
+      imageurl = `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
+    }
+
+    await prisma.blog.create({
+      data: {
+        tag: formData.get("tag")?.toString() || "",
+        title: formData.get("title")?.toString() || "",
+        description: formData.get("description")?.toString() || "",
+        imageurl,
+      },
+    });
+
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
+  } catch (error) {
+    console.error("BLOG API ERROR:", err);
+
+    return new Response(
+      JSON.stringify({
+        error: err.message,
+        stack: err.stack,
+      }),
+      { status: 500 }
     );
-
-    imageurl = `https://${process.env.PORTFOLIO_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${key}`;
   }
-
-  await prisma.blog.create({
-    data: {
-      tag: formData.get("tag")?.toString() || "",
-      title: formData.get("title")?.toString() || "",
-      description: formData.get("description")?.toString() || "",
-      imageurl,
-    },
-  });
-
-  return new Response(
-  JSON.stringify({ success: true }),
-  { status: 200 }
-);
-
 }
