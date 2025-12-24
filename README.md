@@ -143,6 +143,7 @@ Today the challenge will be to host a video running in the background to aws s3 
 ✅Updated bucket policy to be able to GetObject within this AWS Resource
 ✅Updated CORS policy to be able to make it accessible from every origin
 </details>
+<details>
 <summary>Day 13</summary>
 For todays episode i will be performing UPDATE operation in my blogs and also have to add some small details including the blog pictureurl, 
 date created, 
@@ -153,10 +154,17 @@ read-count(blog-page visited).
 ✅migrate that new model
 ✅image input type in admin side, we will handle the image upload to s3 later.
 </details>
+<details>
 <summary>Day 14</summary>
 Today we will do these things:
 ✅upload image to s3 bucket
 ✅get the imageurl and update the database
 ✅render that image in all blogs articles
 before we run into the production i need to add new AWS secrets in the environment variable in vercel
+</details>
+<details>
+<summary>Day 15</summary>
+Today we will do these things:
+✅update read count on blog page visit.
+✅add 👁️ emoji on the blog card and display the number there.
 </details>

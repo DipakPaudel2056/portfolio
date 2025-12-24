@@ -65,6 +65,7 @@ await client.connect()
                 description={blog.description}
                 link={blog.id}
                 imageurl={blog.imageurl}
+                readcount={blog.readcount}
               />
             ))}
           </div>
