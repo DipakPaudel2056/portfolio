@@ -3,14 +3,16 @@ import Image from "next/image";
 import "./BlogCard.css";
 import { redirect } from "next/navigation";
 
-const BlogCard = ({ title, tag, description, link, imageurl,readcount }) => {
-
+const BlogCard = ({ title, tag, description, link, imageurl, readcount }) => {
   return (
-    <div className="blog__card" onClick={() => redirect(`/blogs/${link}`)}>
+    <div
+      className="blog__card"
+      onClick={link && (() => redirect(`/blogs/${link}`))}
+    >
       <div>
         <Image
           className="blog__image"
-          src= {imageurl || "/blogimage.jpg"}
+          src={imageurl || "/blogimage.jpg"}
           alt="thumbnail picture of the blog"
           width={400}
           height={400}
@@ -30,7 +32,7 @@ const BlogCard = ({ title, tag, description, link, imageurl,readcount }) => {
         aspiring software developer
 `}
       </div>
-      <p>👁️{readcount}</p>
+      <p>{readcount ? `👁️${readcount}` : ""}</p>
     </div>
   );
 };
