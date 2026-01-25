@@ -1,5 +1,6 @@
 import prisma from "../../lib/prisma";
-
+import Image from "next/image";
+import styles from "./blog.module.css";
 const Page = async ({ params }) => {
   const { id } = await params;
   const blog = await prisma.blog.findUnique({
@@ -15,10 +16,23 @@ const Page = async ({ params }) => {
   if (!blog) return <p>Blog not found</p>;
   return (
     <div className="main">
-      <h1>{blog.title}</h1>
-      <p>{blog.tag}</p>
-      <h1>{blog.description}</h1>
-      <p>{blog.readcount}</p>
+      <article className={styles.article}>
+        <div className={styles.hero}>
+          <Image
+            src={blog.imageurl || "/blogimage.jpg"}
+            alt="thumbnail picture of the blog"
+            fill
+            className={styles.image}
+          />
+        </div>
+
+        <div className={styles.content}>
+          <p className={styles.tag}>{blog.tag}</p>
+          <h1 className={styles.title}>{blog.title}</h1>
+          <p className={styles.reads}>{blog.readcount} reads</p>
+          <p className={styles.description}>{blog.description}</p>
+        </div>
+      </article>
     </div>
   );
 };
