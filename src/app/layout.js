@@ -29,8 +29,11 @@ export default async function RootLayout({ children }) {
             <Link href="/">logo</Link>
           </h2>
           <h2>
-            <Link href="/blogs">
-              blogs
+            <Link href="/blogs" prefetch={true}>
+              <span>
+                blogs
+                <LoadingIndicator />
+              </span>
             </Link>
           </h2>
           <h2>

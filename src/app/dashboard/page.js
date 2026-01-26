@@ -18,9 +18,15 @@ const Page = async () => {
   return (
     <div className="main">
       <h1>welcome to admin dashboard page{session.user.email}</h1>
-      <Link href="/dashboard/blog">
-        <button>create post</button>
-      </Link>
+      <div className="tabs">
+        <Link href="/dashboard/blog">
+          <button>+ Blog 📰</button>
+        </Link>
+        <Link href="/dashboard/income">
+          <button> + Finance 💵</button>
+        </Link>
+      </div>
+
       <h1>Messages</h1>
       {messages.map((message) => (
         <div className="message__card" key={message.id}>

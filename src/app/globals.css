@@ -109,7 +109,7 @@ a {
   cursor: pointer;
 }
 .link-hint {
-  display: inline;
+  display: inline-block;
   width: 0.6em;
   height: 0.6em;
   margin-left: 0.25rem;
