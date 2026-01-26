@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="homepage">
       <div className="header">
-        <video className="header__video" autoPlay loop muted playsInline>
+        <video className="header__video" autoPlay loop muted playsInline preload="auto">
           <source
             src="https://dipak-portfolio-asset.s3.ap-southeast-2.amazonaws.com/portfolio.mp4"
             type="video/mp4"

@@ -12,17 +12,10 @@ body {
   line-height: 1.6;
 }
 
-.main {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
-}
-
 /* === CONTACT HEADER === */
 .contact__header {
   text-align: center;
   margin-bottom: 4rem;
-  padding: 2rem;
   background: white;
   border-radius: 12px;
   box-shadow: 0 4px 14px rgba(0,0,0,0.08);

@@ -40,18 +40,9 @@ await client.connect()
       <div className="blog__header">
         <h1>Learn more about me</h1>
         <p>
-          In this blog i would express what i am trying to build and how i think
+          Here I express what i am trying to build and how i think
           while working in a project.
         </p>
-        <span className="search__bar">
-          <input
-            type="text"
-            name="search__blog"
-            id="search__blog"
-            placeholder="find blogs"
-          />
-          <button className="find__now__btn">Find Now</button>
-        </span>
       </div>
       <div className="blog__main">
         <div className="blogs__all">
@@ -71,14 +62,14 @@ await client.connect()
           </div>
           <Pagination currentPage={page} totalPages={totalPages} />
         </div>
-        <div className="blog__categorical">
+        {/* <div className="blog__categorical">
           <h2>Featured.</h2>
           <div className="featured__blogs">
             <BlogCard />
             <BlogCard />
             <BlogCard />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
