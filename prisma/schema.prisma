@@ -37,3 +37,11 @@ model User {
   email     String   @unique
   password  String?
 }
+
+model Finance {
+  id Int @id @default(autoincrement())
+  amount Decimal @db.Decimal(12,2)
+  type String
+  category String
+  date DateTime
+}

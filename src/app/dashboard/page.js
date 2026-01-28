@@ -15,6 +15,8 @@ const Page = async () => {
   }
   const messages = await prisma.message.findMany();
   const blogs = await prisma.blog.findMany();
+  const finances = await prisma.finance.findMany();
+  console.log(finances)
   return (
     <div className="main">
       <h1>welcome to admin dashboard page{session.user.email}</h1>
@@ -45,6 +47,15 @@ const Page = async () => {
           <p>{blog.title}</p>
           <DeleteBlog id={blog.id} />
           <UpdateBlog id={blog.id} />
+        </div>
+      ))}
+      <h1>Finances</h1>
+      {finances.map((finance) => (
+        <div className="message__card" key={finance.id}>
+          <p> {finance.type}</p>
+          <p>{finance.amount.toString()}</p>
+          <p> {finance.category}</p>
+          <p> {new Date(finance.date).toLocaleDateString()}</p>
         </div>
       ))}
       <Signout />
