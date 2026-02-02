@@ -1,6 +1,7 @@
 import prisma from "../../lib/prisma";
 import Image from "next/image";
 import styles from "./blog.module.css";
+import { DocxToHtmlConverter } from "../../../app/ui/docxtohtml";
 const Page = async ({ params }) => {
   const { id } = await params;
   const blog = await prisma.blog.findUnique({
@@ -19,7 +20,7 @@ const Page = async ({ params }) => {
       <article className={styles.article}>
         <div className={styles.hero}>
           <Image
-            src={blog.imageurl || "/blogimage.jpg"}
+            src={blog.imageurl}
             alt="thumbnail picture of the blog"
             fill
             className={styles.image}

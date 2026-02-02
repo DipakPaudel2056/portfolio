@@ -2,7 +2,6 @@
     max-width: 300px;
     border-radius: .2em;
     border: 1px solid #292929;
-    padding: .2em;
     position: relative;
     height: 400px;
     overflow: hidden;
@@ -19,14 +18,16 @@
     width: 100%;
 }
 .blog__tag {
-    background-color: gray;
     font-size: .8em;
     object-fit: contain;
     width: fit-content;
-    padding: .2em;
     color: white;
     border-radius: .2em;
-    margin-top: 70%;
+    margin-top: 95%;
+}
+.blog__info{
+    background-color: rgba(128, 128, 128, 0.705);
+    color: white;
 }
 .blog__title {
     color: white;
@@ -35,4 +36,7 @@
 .blog__description {
     font-size: .5em;
     color: white;
+}
+.readcount{
+    font-size: 0.8em;
 }

@@ -12,27 +12,31 @@ const BlogCard = ({ title, tag, description, link, imageurl, readcount }) => {
       <div>
         <Image
           className="blog__image"
-          src={imageurl || "/blogimage.jpg"}
+          src={imageurl ? imageurl : "/default_blog_image.jpg"}
+          preload
           alt="thumbnail picture of the blog"
           width={400}
           height={400}
         />
       </div>
-      <div className="blog__tag">{tag ? tag : `Health & Nutrition`}</div>
-      <div className="blog__title">
-        {title
-          ? title
-          : `        How i am maintaining my daily life: being a dishy boy
+      <div className="blog__info">
+        <div className="blog__tag">{tag ? tag : `Health & Nutrition`}</div>
+        <div className="blog__title">
+          {title
+            ? title
+            : `        How i am maintaining my daily life: being a dishy boy
 `}
-      </div>
-      <div className="blog__description">
-        {description
-          ? description
-          : `        It is easy to manage all, 40 hours as a dish-hands, 35 hours as a
+        </div>
+        <div className="blog__description">
+          {description
+            ? description.slice(0, 100) +
+              (description.length > 100 ? "..." : "")
+            : `        It is easy to manage all, 40 hours as a dish-hands, 35 hours as a
         aspiring software developer
 `}
+        </div>
+        <p className="readcount">{readcount ? `👁️${readcount}` : ""}</p>
       </div>
-      <p>{readcount ? `👁️${readcount}` : ""}</p>
     </div>
   );
 };
