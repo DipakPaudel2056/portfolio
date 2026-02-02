@@ -4,7 +4,6 @@ import "./style.css";
 import BlogCard from "../ui/BlogCard";
 import Pagination from "../ui/Pagination";
 import { createClient } from "redis";
-import DocxViewer from "../ui/docxtohtml";
 
 const PAGE_SIZE = 5;
 const page = async ({ searchParams }) => {
@@ -63,7 +62,6 @@ await client.connect()
           </div>
           <Pagination currentPage={page} totalPages={totalPages} />
         </div>
-        <DocxViewer />
         {/* <div className="blog__categorical">
           <h2>Featured.</h2>
           <div className="featured__blogs">
