@@ -1,7 +1,6 @@
 import prisma from "../../lib/prisma";
 import Image from "next/image";
 import styles from "./blog.module.css";
-import { DocxToHtmlConverter } from "../../../app/ui/docxtohtml";
 const Page = async ({ params }) => {
   const { id } = await params;
   const blog = await prisma.blog.findUnique({
