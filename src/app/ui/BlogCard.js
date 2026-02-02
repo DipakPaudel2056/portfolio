@@ -13,7 +13,7 @@ const BlogCard = ({ title, tag, description, link, imageurl, readcount }) => {
         <Image
           className="blog__image"
           src={imageurl ? imageurl : "/default_blog_image.jpg"}
-          preload
+          priority
           alt="thumbnail picture of the blog"
           width={400}
           height={400}
