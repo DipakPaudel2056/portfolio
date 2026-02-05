@@ -157,3 +157,24 @@ a {
   padding: 1em;
   font-weight: bold;
 }
+.footer {
+  display: flex;
+  margin-bottom: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--background);
+}
+.footer-content {
+  gap: 2em;
+  color: var(--foreground);
+  font-size: 0.9em;
+  display: flex;
+  font-weight: bold;
+}
+.footer-bottom {
+  margin-top: 0.5rem;
+  font-size: 0.8em;
+  color: #909090;
+}

@@ -1,3 +1,4 @@
+import Link from "next/link";
 import RealtimeCounter from "../app/ui/RealtimeCounter";
 import prisma from "./lib/prisma";
 export default function Home() {
@@ -10,7 +11,14 @@ export default function Home() {
   return (
     <div className="homepage">
       <div className="header">
-        <video className="header__video" autoPlay loop muted playsInline preload="auto">
+        <video
+          className="header__video"
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        >
           <source
             src="https://dipak-portfolio-asset.s3.ap-southeast-2.amazonaws.com/portfolio.mp4"
             type="video/mp4"
@@ -22,7 +30,9 @@ export default function Home() {
           <h3>
             WEBSITES, MOBILE APPLICATIONS, BUSINESS ANALYST, SOLUTION ARCHITECT
           </h3>
-          <button className="header__btn">CONTACT NOW</button>
+          <Link href="/contact">
+            <button className="header__btn">CONTACT NOW</button>
+          </Link>
         </div>
       </div>
       <div className="second__div">

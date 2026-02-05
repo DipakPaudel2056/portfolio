@@ -26,21 +26,21 @@ export default async function RootLayout({ children }) {
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <div className="navbar">
           <h2>
-            <Link href="/">logo</Link>
+            <Link href="/">Home</Link>
           </h2>
           <h2>
             <Link href="/blogs" prefetch={true}>
               <span>
-                blogs
+                Blogs
                 <LoadingIndicator />
               </span>
             </Link>
           </h2>
           <h2>
-            <Link href="/projects">projects</Link>
+            <Link href="/projects">Projects</Link>
           </h2>
           <h2>
-            <Link href="/contact">contact</Link>
+            <Link href="/contact">Contact</Link>
           </h2>
           <h2>
             {session ? (
@@ -51,6 +51,19 @@ export default async function RootLayout({ children }) {
           </h2>
         </div>
         {children}
+        <>
+          <div className="footer">
+            <div className="footer-content">
+              <Link href="/">Home</Link>
+              <Link href="/blogs">Blogs</Link>
+              <Link href="/contact">Contact</Link>
+              <Link href="/projects">Projects</Link>
+            </div>
+            <div className="footer-bottom">
+              <p>&copy; 2026 Dipak Paudel. All rights reserved.</p>
+            </div>
+          </div>
+        </>
       </body>
     </html>
   );
