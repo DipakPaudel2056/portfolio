@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import "./projectCard.css";
 import Image from "next/image";
 import projectImage from "../../../public/blogimage.jpg";
@@ -7,7 +6,7 @@ import {
   FaGit,
   FaGlobe
 } from "react-icons/fa";
-export default function ProjectCard({
+function ProjectCard({
   projectId,
   thumbnailPic,
   projectDescription,
@@ -55,3 +54,5 @@ export default function ProjectCard({
     </div>
   );
 }
+
+export default ProjectCard

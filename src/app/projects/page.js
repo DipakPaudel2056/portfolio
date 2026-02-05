@@ -1,4 +1,3 @@
-import React from "react";
 import ProjectCard from "../ui/projectCard";
 const page = () => {
   return (
