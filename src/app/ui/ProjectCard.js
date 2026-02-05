@@ -1,5 +1,5 @@
 "use client";
-import "./projectCard.css";
+import "./ProjectCard.css";
 import Image from "next/image";
 import projectImage from "../../../public/blogimage.jpg";
 import {
