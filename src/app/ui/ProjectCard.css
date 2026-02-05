@@ -1,0 +1,49 @@
+.project-card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.project-card:hover .card-overlay {
+    opacity: 1;
+}
+
+.description {
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tech, .time {
+    font-size: 0.9em;
+}
+.links {
+    margin-top: 15px;
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+}

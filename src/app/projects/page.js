@@ -1,11 +1,17 @@
 import React from "react";
-
+import ProjectCard from "../ui/projectCard";
 const page = () => {
   return (
     <div className="main">
-      <div className="tiles">
-        <h1>Human OS</h1>
-      </div>
+        <ProjectCard
+          projectId={1}
+          projectName="Human OS"
+          projectDescription="Human OS is a comprehensive health and wellness platform that empowers individuals to take control of their well-being."
+          techUsed={["React", "Node.js", "MongoDB", "Express"]}
+          timeTaken="2 months"
+          liveURL="https://github.com/dipakpaudel2056"
+          githubURL="https://github.com/dipakpaudel2056"
+        />
     </div>
   );
 };
