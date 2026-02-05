@@ -1,4 +1,4 @@
-import ProjectCard from "../ui/projectCard";
+import ProjectCard from "../ui/ProjectCard";
 const page = () => {
   return (
     <div className="main">
