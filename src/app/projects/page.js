@@ -11,6 +11,15 @@ const page = () => {
           liveURL="https://wordtohtmlapp.vercel.app/"
           githubURL="https://github.com/DipakPaudel2056/wordtohtmlapp"
         />
+         <ProjectCard
+          projectId={2}
+          projectName="Data cleaning with pandas"
+          projectDescription="I cleaned the messy csv dat using pandas."
+          techUsed={["Python","Pandas","numpy"]}
+          timeTaken="0.5 hour"
+          liveURL="https://github.com/DipakPaudel2056/panda-notebook"
+          githubURL="https://github.com/DipakPaudel2056/panda-notebook"
+        />
     </div>
   );
 };
