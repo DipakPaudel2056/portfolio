@@ -28,6 +28,17 @@ const page = () => {
             "https://dipak-portfolio-asset.s3.ap-southeast-2.amazonaws.com/dipak_paudel_data_cleaning.png"
           }
         />
+        <ProjectCard
+          projectId={3}
+          projectName="Human OS App"
+          projectDescription="To keep track of my daily activities and improve my productivity."
+          techUsed={["react", "AWS", "Lambda", "DynamoDB", "CSS"]}
+          timeTaken="5 hours"
+          liveURL="https://human-os-liart.vercel.app/"
+          thumbnailPic={
+            "https://dipak-portfolio-asset.s3.ap-southeast-2.amazonaws.com/Gemini_Generated_Image_efon0lefon0lefon.png"
+          }
+        />
       </div>
     </div>
   );
